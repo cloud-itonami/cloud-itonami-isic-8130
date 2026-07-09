@@ -1,0 +1,11 @@
+{:itonami.blueprint/id "cloud-itonami-8130"
+ :itonami.blueprint/name "Community Landscape Care and Maintenance Operations"
+ :itonami.blueprint/isic-rev5 "8130"
+ :itonami.blueprint/domain :commercial/landscape-care-maintenance
+ :itonami.blueprint/license "AGPL-3.0-or-later"
+ :itonami.blueprint/social-impact [:worker-safety :water-stewardship :green-space-access]
+ :itonami.blueprint/governor :landscape-care-governor
+ :itonami.blueprint/robotics true
+ :itonami.blueprint/required-technologies [:robotics :identity :forms :dmn :bpmn :audit-ledger :labor]
+ :itonami.blueprint/optional-technologies [:optimization]
+ :itonami.blueprint/status :public-oss}
