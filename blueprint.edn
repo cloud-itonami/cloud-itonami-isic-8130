@@ -8,4 +8,40 @@
  :itonami.blueprint/robotics true
  :itonami.blueprint/required-technologies [:robotics :identity :forms :dmn :bpmn :audit-ledger :labor]
  :itonami.blueprint/optional-technologies [:optimization]
- :itonami.blueprint/status :public-oss}
+ :itonami.blueprint/status :public-oss
+ :itonami.blueprint/maturity :implemented
+ :itonami.blueprint/implemented-slice
+ "`:landscape-care-governor` is implemented end-to-end in `src/landscapecare`
+ as a LANDSCAPE-CARE OPERATIONS COORDINATION actor -- Landscape Care Advisor
+ (LLM proposal-only, deterministic mock advisor for demo/tests) ⊣ Landscape
+ Care Governor (closed-op-allowlist / site-contract-registration-before-
+ any-action hard-gate / applicator-license-equipment-calibration-restricted-
+ entry-interval-wind-speed-buffer-zone hard-gates, evaluated only for
+ chemical-application service types / equipment-safety-clearance hard-gate,
+ evaluated only for service types that require it / unresolved-safety-
+ concern hard-gate / equipment-safety-clearance-or-pesticide-application-
+ decision permanent block, both a structural boolean-flag check and a
+ defense-in-depth text scan). Every one of its four proposal ops
+ (`:log-service-record` / `:schedule-maintenance-operation` /
+ `:flag-safety-concern` / `:coordinate-supply-order`) carries `:effect
+ :propose` ONLY -- the governor HARD-holds any proposal that doesn't
+ (`effect-not-propose-violations`). Service types split into non-chemical
+ (mowing, tree-trimming/pruning -- which carries its own equipment-safety-
+ clearance requirement for chainsaw/pole-saw operation, irrigation-zone
+ monitoring) and chemical-application (herbicide/pesticide, with a genuine
+ restricted-entry interval, maximum safe wind speed, and minimum buffer
+ zone) -- the Governor's chemical-specific checks are skipped entirely,
+ never fabricated, for non-chemical service types, and the equipment-
+ safety-clearance check is skipped entirely for service types that do not
+ require it. `:flag-safety-concern` always escalates to a human, at every
+ phase, regardless of advisor confidence; `:coordinate-supply-order` above
+ a cost threshold likewise always escalates; `:log-service-record` (the one
+ real actuation event this actor performs) always escalates too. The
+ scope-exclusion checks are deliberately phrased as the FINALIZATION
+ action (e.g. \"finalize the pesticide-application decision\"), never as a
+ bare noun (e.g. \"pesticide\") -- a dedicated regression test
+ (`landscapecare.advisor-test`) asserts the advisor's own default mock
+ proposals for every op in the closed allowlist never self-trip either
+ scope-exclusion check. This build ships NO JVM-only interop anywhere in
+ `src/` (all source is `.cljc`) per this workspace's cljs-first runtime-
+ priority rule. See `README.md` for the full governor-check enumeration."}
