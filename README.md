@@ -139,6 +139,16 @@ clearance or a pesticide-application decision — is refused
 unconditionally by the Governor (`:op-not-allowed`), regardless of
 advisor confidence.
 
+### Rollout tiers (`landscapecare.rollout`)
+
+Gradual-autonomy rollout tiers 0 (read-only) through 3 (supervised
+auto-commit), orthogonal to the workflow state machine above. `:flag-
+safety-concern` and `:log-service-record` are never in ANY tier's
+`:auto` set, at any tier — enforced by two independent layers (the
+Governor's `always-escalate-ops` unconditionally, and the rollout
+tables themselves), cross-checked by `rollout/rollout-consistent?` and
+`test/landscapecare/rollout_test.cljc`.
+
 ## Testing
 
 ```bash
