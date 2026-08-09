@@ -33,10 +33,19 @@ open docs/index.html   # or: python3 -m http.server -d docs 8080
 
 Publish: enable GitHub Pages on `main` `/docs`, or any static host.
 
+## 3b. Regenerate the operator console (real actor)
+
+```bash
+clojure -M:render-html
+# writes docs/samples/operator-console.html through landscapecare.operation
+# + landscapecare.governor (flagship item 2). Requires ≥1 HARD hold.
+open docs/samples/operator-console.html
+```
+
 ## 4. Where the Governor sits
 
 - Blueprint governor key: `landscape-care-governor`
-- Likely source path: `src/**/landscape-care-governor.cljc`
+- Source path: `src/landscapecare/governor.cljc`
 - Pattern: advise → govern → phase-gate → commit | escalate | hold (itonami actor / ADR-2607011000)
 
 ## 5. Claim / go-live
