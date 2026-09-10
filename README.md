@@ -118,7 +118,7 @@ would match inside this actor's own default mock-advisor rationale text
 for entirely legitimate, allowed proposals — which routinely and
 correctly use words like "equipment", "safety", or "pesticide" in a
 purely descriptive/logistics sense — and would cause the actor to
-self-block on its own happy path. `test/landscapecare/advisor_test.cljc`
+self-block on its own happy path. `test/landscapecare/advisor_test.kotoba`
 is a dedicated regression test asserting the advisor's own default
 proposals for every op in the closed allowlist never trip either
 scope-exclusion check.
@@ -147,7 +147,7 @@ safety-concern` and `:log-service-record` are never in ANY tier's
 `:auto` set, at any tier — enforced by two independent layers (the
 Governor's `always-escalate-ops` unconditionally, and the rollout
 tables themselves), cross-checked by `rollout/rollout-consistent?` and
-`test/landscapecare/rollout_test.cljc`.
+`test/landscapecare/rollout_test.kotoba`.
 
 ## Testing
 
