@@ -45,7 +45,7 @@ open docs/samples/operator-console.html
 ## 4. Where the Governor sits
 
 - Blueprint governor key: `landscape-care-governor`
-- Source path: `src/landscapecare/governor.cljc`
+- Source path: `src/landscapecare/governor.kotoba`
 - Pattern: advise → govern → phase-gate → commit | escalate | hold (itonami actor / ADR-2607011000)
 
 ## 5. Claim / go-live
