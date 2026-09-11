@@ -20,7 +20,7 @@ cd cloud-itonami-isic-8130
 ## 2. Run tests
 
 ```bash
-clojure -M:test
+kbb -M:test
 ```
 
 Expect green if maturity is `unknown`. Fix failures before operating.
@@ -36,7 +36,7 @@ Publish: enable GitHub Pages on `main` `/docs`, or any static host.
 ## 3b. Regenerate the operator console (real actor)
 
 ```bash
-clojure -M:render-html
+kbb -M:render-html
 # writes docs/samples/operator-console.html through landscapecare.operation
 # + landscapecare.governor (flagship item 2). Requires ≥1 HARD hold.
 open docs/samples/operator-console.html

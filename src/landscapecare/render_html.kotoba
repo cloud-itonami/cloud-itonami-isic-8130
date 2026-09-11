@@ -39,7 +39,7 @@
   two consecutive runs). Seed site-order shapes are lifted from the
   existing test fixtures (disclosed), not invented here.
 
-  Usage: `clojure -M:render-html [out-file]`
+  Usage: `kbb -M:render-html [out-file]`
   (default `docs/samples/operator-console.html`)."
   (:require [jp-go-dds.skin]
             [kotoba.lang.text :as str]
@@ -267,7 +267,7 @@
      "<main>\n"
      "  <section class=\"card\">\n"
      "    <h2>Site orders</h2>\n"
-     "    <p class=\"muted\">Demo snapshot — build-time-generated from <code>landscapecare.store</code> via <code>landscapecare.render-html</code> (<code>clojure -M:render-html</code>). Seed shapes match <code>landscapecare.governor-test</code> fixtures.</p>\n"
+     "    <p class=\"muted\">Demo snapshot — build-time-generated from <code>landscapecare.store</code> via <code>landscapecare.render-html</code> (<code>kbb -M:render-html</code>). Seed shapes match <code>landscapecare.governor-test</code> fixtures.</p>\n"
      "    <table>\n"
      "      <thead><tr><th>Site order</th><th>Service type</th><th>Jurisdiction</th><th>Status</th></tr></thead>\n"
      "      <tbody>\n"

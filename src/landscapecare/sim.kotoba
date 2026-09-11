@@ -3,7 +3,7 @@
   coordination actor end-to-end, with a demo run of the mock advisor's
   default proposals against a small in-memory store.
 
-  For CLI: clojure -M:run
+  For CLI: kbb -M:run
 
   Example flow:
     1. Start with a store holding one registered, clean site order
