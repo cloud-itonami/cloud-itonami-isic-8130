@@ -14,7 +14,7 @@
          io.github.kotoba-lang/langgraph
          {:local/root "../../kotoba-lang/langgraph"}}}
   :run {:main-opts ["-m" "landscapecare.sim"]}
-  ;; clojure -M:render-html [out-file] -> regenerate docs/samples/operator-console.html
+  ;; kbb -M:render-html [out-file] -> regenerate docs/samples/operator-console.html
   ;; through the real actor (flagship checklist item 2, ADR-2607189300 Wave2 item2).
   :render-html {:main-opts ["-m" "landscapecare.render-html"]}
   :test {:extra-paths ["test"]
